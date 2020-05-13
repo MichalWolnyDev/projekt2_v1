@@ -2,6 +2,7 @@
 using System.Numerics;
 using System.Diagnostics;
 
+//  Projekt wykonali: Michał Wolny i Patryk Tomaszewski
 namespace ConsoleApp1
 {
     class Program
@@ -47,7 +48,7 @@ namespace ConsoleApp1
             else if (n % 2 == 0) return false;
             else
             {
-                for (BigInteger i = 3; i*i < n; i += 2)
+                for (BigInteger i = 3; i * i < n; i += 2)
                 {
                     ModuloCounterDecent++;
                     if (n % i == 0) return false;
@@ -75,41 +76,42 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             BigInteger[] tab = { 100913, 1009139, 10091401, 100914061, 1009140611, 10091406133, 100914061337, 1009140613399 };
-            // BigInteger[] tabSmall = { 100913, 1009139, 10091401, 100914061, 1009140611 };
-            /*
-            Console.WriteLine("Algorytm przyzwoity: ");
+
+            Console.WriteLine("\n\nAlgorytm przyzwoity: ");
             for (int i = 0; i < tab.Length; i++)
             {
-                Console.WriteLine(IsPrimeDecent(tab[i]) + "\t" + tab[i] + "\t" + ModuloCounterDecent + "\t");
-                
+                Console.WriteLine(IsPrimeDecent(tab[i]) + ";" + tab[i] + ";" + ModuloCounterDecent + "\t");
+
             }
             Console.WriteLine(" ");
 
-            Console.WriteLine("Algorytm przykładowy: ");
+            //------------------------------------------------------------------------------------------------------------------------------------------
+            Console.WriteLine("\n\nAlgorytm przykładowy: ");
             for (int i = 0; i < tab.Length; i++)
             {
-                Console.WriteLine(IsPrimeExample(tab[i]) + "\t" + tab[i] + "\t" + ModuloCounterExample + "\t");
-
+                Console.WriteLine(IsPrimeExample(tab[i]) + ";" + tab[i] + ";" + ModuloCounterExample + "\t");
             }
-            */
-            /*
-            Console.WriteLine("Algorytm przykładowy, pomiar czasu:");
+
+            //------------------------------------------------------------------------------------------------------------------------------------------
+            Console.WriteLine("\n\nAlgorytm przykładowy, pomiar czasu:");
             Stopwatch exampleWatch = new Stopwatch();
             exampleWatch.Reset();
             exampleWatch.Start();
             for (int i = 0; i < tab.Length; i++)
             {
-                Console.WriteLine(IsPrimeExampleClear(tab[i]) + "\t" + tab[i] + "\t" + exampleWatch.ElapsedMilliseconds + "\t");
+                Console.WriteLine(IsPrimeExampleClear(tab[i]) + ";" + tab[i] + ";" + exampleWatch.ElapsedMilliseconds + "\t");
             }
             exampleWatch.Stop();
-            */
-            Console.WriteLine("Algorytm przyzwoity, pomiar czasu:");
+
+            //------------------------------------------------------------------------------------------------------------------------------------------
+
+            Console.WriteLine("\n\nAlgorytm przyzwoity, pomiar czasu:");
             Stopwatch decentWatch = new Stopwatch();
             decentWatch.Reset();
             decentWatch.Start();
             for (int i = 0; i < tab.Length; i++)
             {
-                Console.WriteLine(IsPrimeDecentClear(tab[i]) + "\t" + tab[i] + "\t" + decentWatch.ElapsedMilliseconds + "\t");
+                Console.WriteLine(IsPrimeDecentClear(tab[i]) + ";" + tab[i] + ";" + decentWatch.ElapsedMilliseconds + "\t");
             }
             decentWatch.Stop();
             Console.ReadKey();
